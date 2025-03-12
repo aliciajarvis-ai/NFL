@@ -10,3 +10,15 @@ NFL Squad
 
 # Project Scenario
 Alex Carter is a journalist covering NCAA Division I Football, focusing on the upcoming SEC Championship Game. To prepare, she needs detailed data on the teams, players, referees, and in-game events from the current season. She reaches out to a coworker to help her gather key insights, including team performance trends, player statistics, penalty calls, and new recruits attending the game. By leveraging this data, Alex aims to write an in-depth analytical article that provides a unique perspective on the matchup, helping her stand out in the competitive world of sports journalism.
+
+# Key Entities
+1. **Games**: Stores details about each game, including the game ID, date, location, and scores for both teams. This entity helps track when and where games were played and their final results.
+2. **Teams**: Contains information about each football team, including team name, conference, home stadium, and founding year. This is useful for understanding team backgrounds and historical performance.
+3. **Players**: Maintains records of individual players, including their names, team affiliation, position, height, weight, and status. This helps Alex analyze key players in the championship game.
+4. **Team_Stats**: Holds team-level performance metrics, such as total yards, penalties, and penalty yards for each game. This allows for comparing team performances throughout the season.
+5. **Player_Stats**: Tracks individual player statistics per game, including passing, rushing, and receiving yards, as well as touchdowns, tackles, and interceptions. This helps highlight standout players and their contributions.
+6. **Penalties**: Records penalty details such as type, yards lost, and the player and team responsible. This helps Alex analyze discipline trends and how penalties impact game outcomes.
+7. **Injuries**: Documents player injuries with descriptions and status updates. Knowing which key players are injured can be crucial for pre-game analysis.
+8. **Recruiting**: Lists new recruits, including their high school, hometown, and committed team. This can provide insights into upcoming talent for teams.
+9. **Coaches**: Stores details about team coaches, including names, roles, and experience levels. Coaching strategies can play a big role in game outcomes.
+10. **Teams_has_Games**: Establishes the relationship between teams and games, linking each team to the specific games they have played.
