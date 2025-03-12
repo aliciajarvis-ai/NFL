@@ -1,6 +1,7 @@
 # NFL Database Project
 # Team Name: 
 NFL Squad
+
 #Team Members
 1. Alicia Jarvis - https://github.com/aliciajarvis-ai
 2. Oliver Schouest - https://github.com/oschouest
