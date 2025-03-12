@@ -22,3 +22,6 @@ Alex Carter is a journalist covering NCAA Division I Football, focusing on the u
 8. **Recruiting**: Lists new recruits, including their high school, hometown, and committed team. This can provide insights into upcoming talent for teams.
 9. **Coaches**: Stores details about team coaches, including names, roles, and experience levels. Coaching strategies can play a big role in game outcomes.
 10. **Teams_has_Games**: Establishes the relationship between teams and games, linking each team to the specific games they have played.
+
+# Data Model
+<img width="323" alt="image" src="https://github.com/user-attachments/assets/42d2769b-207f-4751-ba30-26bdc8adb55f" />
