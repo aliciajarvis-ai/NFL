@@ -9,7 +9,7 @@ NFL Squad
 4. Nitya Kottapally - https://github.com/nityakottapally1
 
 # Project Scenario
-Alex Carter is a journalist covering NCAA Division I Football, focusing on the upcoming SEC Championship Game. To prepare, she needs detailed data on the teams, players, referees, and in-game events from the current season. She reaches out to a coworker to help her gather key insights, including team performance trends, player statistics, penalty calls, and new recruits attending the game. By leveraging this data, Alex aims to write an in-depth analytical article that provides a unique perspective on the matchup, helping her stand out in the competitive world of sports journalism.
+Alex Carter, a journalist covering NCAA Division I Football, is preparing a comprehensive wrap-up of the 2024 SEC season. With the season concluded, she wants to analyze the NFL draft picks from SEC teams, standout player performances, team trends, coaching changes, and other key developments within the conference. To ensure her article provides a unique and insightful perspective, she reaches out to a coworker for detailed SEC-specific data, including draft selections, player stats, team performance metrics, and notable off-season moves. By leveraging this information, Alex aims to craft an in-depth analysis that sets her apart in the competitive world of sports journalism.
 
 # Key Entities
 1. **Games**: Stores details about each game, including the game ID, date, location, and scores for both teams. This entity helps track when and where games were played and their final results.
