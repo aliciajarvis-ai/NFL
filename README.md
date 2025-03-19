@@ -1,6 +1,6 @@
-# NFL Database Project
+# SEC DATABASE
 # Team Name: 
-NFL Squad
+G2
 
 # Team Members
 1. Alicia Jarvis - https://github.com/aliciajarvis-ai
