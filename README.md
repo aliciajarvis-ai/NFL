@@ -7,6 +7,7 @@ G2
 2. Oliver Schouest - https://github.com/oschouest
 3. Tejas Panicker - https://github.com/Tejas5012
 4. Nitya Kottapally - https://github.com/nityakottapally1
+5. Aman Sathani - https://github.com/amansathani
 
 # Project Scenario
 Alex Carter, a journalist covering NCAA Division I Football, is preparing a comprehensive wrap-up of the 2024 SEC season. With the season concluded, she wants to analyze the NFL draft picks from SEC teams, standout player performances, team trends, coaching changes, and other key developments within the conference. To ensure her article provides a unique and insightful perspective, she reaches out to a coworker for detailed SEC-specific data, including draft selections, player stats, team performance metrics, and notable off-season moves. By leveraging this information, Alex aims to craft an in-depth analysis that sets her apart in the competitive world of sports journalism.
