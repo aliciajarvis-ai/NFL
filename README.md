@@ -40,9 +40,9 @@ Alex Carter, a journalist covering NCAA Division I Football, is preparing a comp
 
 ![image](https://github.com/user-attachments/assets/4638a7a5-fd9a-4076-bdcd-7517f2d070f5)
 
-# Queries 
-
-1. ```sql
+## Queries 
+# First Query
+```sql
 SELECT p.first_name, p.last_name, t.team_name, ps.game_id, g.game_date, ps.passing_yards
 FROM Player_Stats ps
 JOIN Players p ON ps.player_id = p.player_id
