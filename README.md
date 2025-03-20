@@ -30,15 +30,121 @@ Alex Carter, a journalist covering NCAA Division I Football, is preparing a comp
 <img width="700" alt="image" src= "https://github.com/user-attachments/assets/cb287cc5-0321-4dd1-9bd8-74bcd3a3dc7c" />
 
 # Data Dictionary
-![image](https://github.com/user-attachments/assets/352f02fe-e7c2-4d78-b780-52eeb5ef6360)
 
-![image](https://github.com/user-attachments/assets/2f8d4e31-bb2d-418d-b66d-ea1a21b85efe)
+## Coaches
+| Column Name        | Data Type/Format       | Role         | Description                                  | Size |
+|--------------------|------------------------|--------------|----------------------------------------------|------|
+| coach_id           | INT                    | Primary Key  | Unique identifier for each coach             |      |
+| first_name         | VARCHAR(50)            | Attribute    | Coach's first name                           | 50   |
+| last_name          | VARCHAR(50)            | Attribute    | Coach's last name                            | 50   |
+| team_id            | INT                    | Foreign Key  | Links to Teams(team_id)                      |      |
+| position           | ENUM('Head Coach', 'Offensive Coordinator', 'Defensive Coordinator', 'Special Teams') | Attribute    | Coach's role (e.g., Head Coach)             |      |
+| years_experience   | INT                    | Attribute    | Years of coaching experience                 |      |
 
-![image](https://github.com/user-attachments/assets/09425b12-3285-4568-87cc-9acc4a5497c6)
+## Conferences
+| Column Name        | Data Type/Format       | Role         | Description                                  | Size |
+|--------------------|------------------------|--------------|----------------------------------------------|------|
+| conference_id      | INT                    | Primary Key  | Unique identifier for each conference        |      |
+| conference_name    | VARCHAR(100)           | Attribute    | Full name of the conference (e.g., SEC)      | 100  |
+| abbreviation       | VARCHAR(10)            | Attribute    | Short code for the conference (e.g., SEC)    | 10   |
 
-![image](https://github.com/user-attachments/assets/49157efc-737b-4c0e-bf59-2dcb51091a13)
+## Games
+| Column Name        | Data Type/Format       | Role         | Description                                  | Size |
+|--------------------|------------------------|--------------|----------------------------------------------|------|
+| game_id            | INT                    | Primary Key  | Unique identifier for each game             |      |
+| game_date          | DATE                   | Attribute    | Date the game was played                     |      |
+| venue_id           | INT                    | Foreign Key  | Links to Venues(venue_id)                    |      |
+| home_team_score    | INT                    | Attribute    | Score of the home team                       |      |
+| away_team_score    | INT                    | Attribute    | Score of the away team                       |      |
 
-![image](https://github.com/user-attachments/assets/4638a7a5-fd9a-4076-bdcd-7517f2d070f5)
+## Injuries
+| Column Name        | Data Type/Format       | Role         | Description                                  | Size |
+|--------------------|------------------------|--------------|----------------------------------------------|------|
+| injury_id          | INT                    | Primary Key  | Unique identifier for each injury           |      |
+| player_id          | INT                    | Foreign Key  | Links to Players(player_id)                  |      |
+| game_id            | INT                    | Foreign Key  | Links to Games(game_id)                      |      |
+| injury_desc        | VARCHAR(255)           | Attribute    | Description of the injury                    | 255  |
+| injury_status      | ENUM('Probable', 'Questionable', 'Out', 'Season-Ending') | Attribute    | Status of the injury (e.g., Out)        |      |
+
+## Penalties
+| Column Name        | Data Type/Format       | Role         | Description                                  | Size |
+|--------------------|------------------------|--------------|----------------------------------------------|------|
+| penalty_id         | INT                    | Primary Key  | Unique identifier for each penalty          |      |
+| game_id            | INT                    | Foreign Key  | Links to Games(game_id)                      |      |
+| player_id          | INT                    | Foreign Key  | Links to Players(player_id)                  |      |
+| team_id            | INT                    | Foreign Key  | Links to Teams(team_id)                      |      |
+| penalty_type       | VARCHAR(255)           | Attribute    | Type of penalty (e.g., Holding)              | 255  |
+| yards_lost         | INT                    | Attribute    | Yards lost due to the penalty                |      |
+
+## Player_Stats
+| Column Name        | Data Type/Format       | Role         | Description                                  | Size |
+|--------------------|------------------------|--------------|----------------------------------------------|------|
+| stat_id            | INT                    | Primary Key  | Unique identifier for each stat entry       |      |
+| game_id            | INT                    | Foreign Key  | Links to Games(game_id)                      |      |
+| player_id          | INT                    | Foreign Key  | Links to Players(player_id)                  |      |
+| passing_yards      | INT                    | Attribute    | Passing yards in the game                    |      |
+| rushing_yards      | INT                    | Attribute    | Rushing yards in the game                    |      |
+| receiving_yards    | INT                    | Attribute    | Receiving yards in the game                  |      |
+| touchdowns         | INT                    | Attribute    | Total touchdowns scored                      |      |
+| tackles            | INT                    | Attribute    | Total tackles made                           |      |
+| sacks              | INT                    | Attribute    | Total sacks made                             |      |
+| interceptions      | INT                    | Attribute    | Total interceptions made                     |      |
+
+## Players
+| Column Name        | Data Type/Format       | Role         | Description                                  | Size |
+|--------------------|------------------------|--------------|----------------------------------------------|------|
+| player_id          | INT                    | Primary Key  | Unique identifier for each player           |      |
+| first_name         | VARCHAR(50)            | Attribute    | Player's first name                          | 50   |
+| last_name          | VARCHAR(50)            | Attribute    | Player's last name                           | 50   |
+| team_id            | INT                    | Foreign Key  | Links to Teams(team_id)                      |      |
+| position           | ENUM('QB', 'RB', 'WR', 'TE', 'OL', 'DL', 'LB', 'DB', 'K', 'P') | Attribute    | Player's position (e.g., QB)               |      |
+| jersey_number      | INT                    | Attribute    | Player's jersey number                       |      |
+| class_year         | ENUM('Freshman', 'Sophomore', 'Junior', 'Senior', 'Graduate') | Attribute    | Player's academic year (e.g., Junior)       |      |
+
+## Recruiting
+| Column Name        | Data Type/Format       | Role         | Description                                  | Size |
+|--------------------|------------------------|--------------|----------------------------------------------|------|
+| recruit_id         | INT                    | Primary Key  | Unique identifier for each recruit          |      |
+| first_name         | VARCHAR(50)            | Attribute    | Recruit's first name                         | 50   |
+| last_name          | VARCHAR(50)            | Attribute    | Recruit's last name                          | 50   |
+| committed_team_id  | INT                    | Foreign Key  | Links to Teams(team_id)                      |      |
+| position           | ENUM('QB', 'RB', 'WR', 'TE', 'OL', 'DL', 'LB', 'DB', 'K', 'P') | Attribute    | Recruit's position (e.g., QB)               |      |
+| star_rating        | INT                    | Attribute    | Recruit's star rating (1-5)                  |      |
+
+## Team_Stats
+| Column Name        | Data Type/Format       | Role         | Description                                  | Size |
+|--------------------|------------------------|--------------|----------------------------------------------|------|
+| stat_id            | INT                    | Primary Key  | Unique identifier for each stat entry       |      |
+| game_id            | INT                    | Foreign Key  | Links to Games(game_id)                      |      |
+| team_id            | INT                    | Foreign Key  | Links to Teams(team_id)                      |      |
+| total_yards        | INT                    | Attribute    | Total offensive yards                        |      |
+| passing_yards      | INT                    | Attribute    | Total passing yards                          |      |
+| rushing_yards      | INT                    | Attribute    | Total rushing yards                          |      |
+| turnovers          | INT                    | Attribute    | Total turnovers committed                    |      |
+| penalties          | INT                    | Attribute    | Total number of penalties                    |      |
+| penalty_yards      | INT                    | Attribute    | Total penalty yards                          |      |
+
+## Teams
+| Column Name        | Data Type/Format       | Role         | Description                                  | Size |
+|--------------------|------------------------|--------------|----------------------------------------------|------|
+| team_id            | INT                    | Primary Key  | Unique identifier for each team             |      |
+| team_name          | VARCHAR(100)           | Attribute    | Full name of the team (e.g., Alabama)        | 100  |
+| abbreviation       | VARCHAR(10)            | Attribute    | Short code for the team (e.g., ALA)          | 10   |
+| conference_id      | INT                    | Foreign Key  | Links to Conferences(conference_id)          |      |
+
+## Teams_has_Games
+| Column Name        | Data Type/Format       | Role         | Description                                  | Size |
+|--------------------|------------------------|--------------|----------------------------------------------|------|
+| team_id            | INT                    | Primary Key, Foreign Key | Links to Teams(team_id)                |      |
+| game_id            | INT                    | Primary Key, Foreign Key | Links to Games(game_id)                |      |
+| role               | ENUM('Home', 'Away', 'Winner') | Attribute    | Role of the team in the game             |      |
+
+## Venues
+| Column Name        | Data Type/Format       | Role         | Description                                  | Size |
+|--------------------|------------------------|--------------|----------------------------------------------|------|
+| venue_id           | INT                    | Primary Key  | Unique identifier for each venue            |      |
+| venue_name         | VARCHAR(255)           | Attribute    | Name of the stadium (e.g., Bryant
+
 
 # Queries 
 ## First Query
