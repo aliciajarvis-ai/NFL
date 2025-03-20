@@ -69,6 +69,12 @@ JOIN Teams t ON ts.team_id = t.team_id
 GROUP BY t.team_id, t.team_name
 ORDER BY total_penalty_yards DESC;
 ```
+### Results 
+| team_name         | total_penalty_yards | total_penalties |
+|------------------|--------------------|----------------|
+| Georgia Bulldogs | 80                 | 10             |
+| Texas Longhorns  | 75                 | 10             |
+| Florida Gators   | 20                 | 3              |
 
 ---
 ## Third Query 
@@ -79,6 +85,10 @@ JOIN Players p ON i.player_id = p.player_id
 JOIN Teams t ON p.team_id = t.team_id
 WHERE i.game_id = 5;
 ```
+### Results 
+| first_name | last_name | team_name         | injury_desc   | injury_status |
+|------------|----------|------------------|--------------|--------------|
+| Carson     | Beck     | Georgia Bulldogs | Elbow Injury | Out          |
 
 ---
 ## Fourth Query 
