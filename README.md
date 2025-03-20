@@ -221,8 +221,27 @@ JOIN Teams thg_winner_team ON thg_winner.team_id = thg_winner_team.team_id;
 | 3       | 2024-11-09 | Darrell K Royal-Texas Memorial Stadium  | Texas Longhorns     | 28         | Arkansas Razorbacks | 24         | Texas Longhorns     |
 
 ---
+## Tenth Query 
+```sql
+SELECT g.game_id, g.game_date, v.venue_name,
+       thg_loser_team.team_name AS losing_team, ts.penalty_yards,
+       thg_winner_team.team_name AS winning_team
+FROM Games g
+JOIN Venues v ON g.venue_id = v.venue_id
+JOIN Teams_has_Games thg_winner ON g.game_id = thg_winner.game_id AND thg_winner.role = 'Winner'
+JOIN Teams_has_Games thg_loser ON g.game_id = thg_loser.game_id AND thg_loser.team_id != thg_winner.team_id
+JOIN Teams thg_winner_team ON thg_winner.team_id = thg_winner_team.team_id
+JOIN Teams thg_loser_team ON thg_loser.team_id = thg_loser_team.team_id
+JOIN Team_Stats ts ON ts.game_id = g.game_id AND ts.team_id = thg_loser.team_id
+WHERE ts.penalty_yards > 30
+ORDER BY ts.penalty_yards DESC;
+```
+### Results 
+| game_id | game_date  | venue_name           | losing_team        |  penalty_yards         | winning_team          |
+|---------|------------|------------------------|------------------|----------------|------------|------------------|
+| 5       | 2024-12-07 | Mercedes-Benz Stadium   | Texas Longhorns  | 45         | Texas Longhorns  |
 
-
+---
 
 
 
