@@ -32,11 +32,14 @@ Alex Carter, a journalist covering NCAA Division I Football, is preparing a comp
 # Data Dictionary
 ![image](https://github.com/user-attachments/assets/352f02fe-e7c2-4d78-b780-52eeb5ef6360)
 
-<img width="550" alt="image" src= "https://github.com/user-attachments/assets/5d046869-8bbb-4cf6-bfc8-e639de17db84" />
-<img width="550" alt="image" src= "https://github.com/user-attachments/assets/17316382-4934-4f86-aaa3-1f83047028d6" />
-<img width="550" alt="image" src= "https://github.com/user-attachments/assets/24b069e8-42c2-47bb-83d5-cc319bf657fc" /> 
-<img width="550" alt="image" src= "https://github.com/user-attachments/assets/849ecbc8-2b68-48f0-b56b-d2af5c6c96ad" />
-<img width="550" alt="image" src= "https://github.com/user-attachments/assets/cd1acfc3-090d-4296-9711-ca4f150ad1df" />
+![image](https://github.com/user-attachments/assets/2f8d4e31-bb2d-418d-b66d-ea1a21b85efe)
+
+![image](https://github.com/user-attachments/assets/09425b12-3285-4568-87cc-9acc4a5497c6)
+
+![image](https://github.com/user-attachments/assets/49157efc-737b-4c0e-bf59-2dcb51091a13)
+
+![image](https://github.com/user-attachments/assets/4638a7a5-fd9a-4076-bdcd-7517f2d070f5)
+
 
 
 
