@@ -1,6 +1,6 @@
 # SEC DATABASE
 # Team Name: 
-G2
+Group 2
 
 # Team Members
 1. Alicia Jarvis - https://github.com/aliciajarvis-ai
@@ -15,6 +15,12 @@ Alex Carter, a journalist covering NCAA Division I Football, is preparing a comp
 # Data Model
 
 <img width="700" alt="image" src= "https://github.com/user-attachments/assets/cb287cc5-0321-4dd1-9bd8-74bcd3a3dc7c" />
+Our model is based on the structure of the 2024-2025 SEC football season. The Conferences entity represents different football conferences, including the SEC, and contains attributes such as the conference name and abbreviation. Each team belongs to a specific conference, establishing a one-to-many relationship between the Conferences and Teams entities.
+Each team has various Coaches, such as head coaches and assistant coaches, leading to a one-to-many relationship between the Teams and Coaches entities. Additionally, teams recruit new players through the Recruiting entity, which stores information about committed recruits, including their names, star ratings, and the teams they have joined.
+Teams participate in multiple Games throughout the season, where each game includes attributes like game ID, date, scores, and the venue where the game is played. The Venues entity stores details about stadiums, including venue names and locations, establishing a one-to-many relationship with Games. Because a game features two teams, the Teams_has_Games associative entity establishes the many-to-many relationship between Teams and Games.
+Players are a key component of the model, and the Players entity holds details such as player names, positions, heights, weights, jersey numbers, and their associated teams. Players participate in games and have their individual performances recorded in the Player_Stats entity, which tracks passing yards, rushing yards, receiving yards, touchdowns, tackles, and interceptions. Similarly, team-level performance metrics, such as total passing yards, rushing yards, and penalties, are stored in the Team_Stats entity.
+During the season, players may commit fouls or violations, which are recorded in the Penalties entity. This table documents penalty types, yards lost, and the players and teams responsible. Additionally, the Injuries entity tracks player injuries, including descriptions and status updates to monitor their recovery.
+This data model effectively represents the structure of the 2024-2025 SEC football season, capturing key relationships between teams, players, games, and statistics.
 
 # Data Dictionary
 
