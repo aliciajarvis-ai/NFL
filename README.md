@@ -123,6 +123,10 @@ WHERE ps.game_id = 5 AND ps.tackles > 0
 ORDER BY ps.tackles DESC
 LIMIT 1;
 ```
+### Results 
+| first_name | last_name | team_name         | tackles |
+|------------|-----------|------------------|--------|
+| Malaki     | Starks    | Georgia Bulldogs | 8      |
 
 ---
 ## Sixth Query 
@@ -138,6 +142,11 @@ JOIN Team_Stats ts2 ON thg2.team_id = ts2.team_id AND thg2.game_id = ts2.game_id
 JOIN Teams t2 ON ts2.team_id = t2.team_id
 WHERE ts1.game_id = 5;
 ```
+### Results 
+| team    | role  | team_yards | team_passing | team_rushing | opponent  | opponent_yards | opponent_passing | opponent_rushing |
+|------------------|---------|------------|--------------|--------------|------------------|----------------------|----------------------|----------------------|
+| Texas Longhorns  | Away    | 340        | 200          | 140          | Georgia Bulldogs | 350                  | 71                   | 279                  |
+| Georgia Bulldogs | Winner | 350        | 71           | 279          | Texas Longhorns  | 340                  | 200                  | 140                  |
 
 ---
 ## Seventh Query 
