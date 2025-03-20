@@ -1,8 +1,6 @@
 # SEC DATABASE
-# Team Name: 
-Group 2
 
-# Team Members
+## Group 2
 1. Alicia Jarvis - https://github.com/aliciajarvis-ai
 2. Oliver Schouest - https://github.com/oschouest
 3. Tejas Panicker - https://github.com/Tejas5012
@@ -367,7 +365,6 @@ ORDER BY ts.penalty_yards DESC;
 | 5       | 2024-12-07 | Mercedes-Benz Stadium | Texas Longhorns    | 45            | Georgia Bulldogs      |
 
 
----
 
 # Complexity 
 
@@ -383,8 +380,11 @@ ORDER BY ts.penalty_yards DESC;
 | Multiple Joins to Same Table    | -       | -       | -       | -        | -       | Yes (2x) | -       | -       | Yes (3x) | Yes (2x) |
 | Query Complexity            | Simple  | Simple  | Simple  | Complex   | Simple  | Complex  | Simple  | Simple  | Complex  | Complex  |
 
+---
 
-
+# Database Information 
+- Username: al_Group_21484_G2
+- Password: Group_21484_G2
 
 
 
