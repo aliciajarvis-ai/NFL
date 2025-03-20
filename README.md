@@ -40,8 +40,8 @@ Alex Carter, a journalist covering NCAA Division I Football, is preparing a comp
 
 ![image](https://github.com/user-attachments/assets/4638a7a5-fd9a-4076-bdcd-7517f2d070f5)
 
-## Queries 
-# First Query
+# Queries 
+## First Query
 ```sql
 SELECT p.first_name, p.last_name, t.team_name, ps.game_id, g.game_date, ps.passing_yards
 FROM Player_Stats ps
@@ -54,17 +54,86 @@ LIMIT 5;
 ```
 
 ---
+## Second Query 
+```sql
+SELECT t.team_name, SUM(ts.penalty_yards) AS total_penalty_yards, SUM(ts.penalties) AS total_penalties
+FROM Team_Stats ts
+JOIN Teams t ON ts.team_id = t.team_id
+GROUP BY t.team_id, t.team_name
+ORDER BY total_penalty_yards DESC;
+```
 
+---
+## Third Query 
+```sql
+SELECT p.first_name, p.last_name, t.team_name, i.injury_desc, i.injury_status
+FROM Injuries i
+JOIN Players p ON i.player_id = p.player_id
+JOIN Teams t ON p.team_id = t.team_id
+WHERE i.game_id = 5;
+```
 
-2. ![image](https://github.com/user-attachments/assets/dc2cf382-fc42-42cc-abff-22c403802750)
-3. ![image](https://github.com/user-attachments/assets/3a0598b8-434b-4bc0-adb1-3afd70c01348)
-4. ![image](https://github.com/user-attachments/assets/78bdd21d-35af-4870-9c87-4dbfe3f1fdc9)
-5. ![image](https://github.com/user-attachments/assets/fc4067b0-65c5-4e6b-a4ca-470738d8bb5a)
-6. ![image](https://github.com/user-attachments/assets/00af0551-83d1-480a-846a-ec188f512f48)
-7.
-8. ![image](https://github.com/user-attachments/assets/7a4f8c29-35ec-42ef-856f-110e5b67ad23)
-9. ![image](https://github.com/user-attachments/assets/cf1be7ec-ff0a-49c0-a534-63886ee539cf)
+---
+## Fourth Query 
+```sql
+SELECT t.team_name, r.first_name, r.last_name, r.position, r.star_rating
+FROM Recruiting r
+JOIN Teams t ON r.committed_team_id = t.team_id
+WHERE r.star_rating = (
+    SELECT MAX(star_rating)
+    FROM Recruiting r2
+    WHERE r2.committed_team_id = r.committed_team_id
+)
+ORDER BY r.star_rating DESC, t.team_name;
+```
 
+---
+## Fifth Query 
+```sql
+SELECT p.first_name, p.last_name, t.team_name, ps.tackles
+FROM Player_Stats ps
+JOIN Players p ON ps.player_id = p.player_id
+JOIN Teams t ON p.team_id = t.team_id
+WHERE ps.game_id = 5 AND ps.tackles > 0
+ORDER BY ps.tackles DESC
+LIMIT 1;
+```
+
+---
+## Sixth Query 
+```sql
+SELECT t1.team_name AS team, thg1.role, ts1.total_yards AS team_yards, ts1.passing_yards AS team_passing, 
+	ts1.rushing_yards AS team_rushing, t2.team_name AS opponent, ts2.total_yards AS opponent_yards, 
+	ts2.passing_yards AS opponent_passing, ts2.rushing_yards AS opponent_rushing
+FROM Team_Stats ts1
+JOIN Teams t1 ON ts1.team_id = t1.team_id
+JOIN Teams_has_Games thg1 ON ts1.team_id = thg1.team_id AND ts1.game_id = thg1.game_id
+JOIN Teams_has_Games thg2 ON ts1.game_id = thg2.game_id AND thg1.team_id != thg2.team_id
+JOIN Team_Stats ts2 ON thg2.team_id = ts2.team_id AND thg2.game_id = ts2.game_id
+JOIN Teams t2 ON ts2.team_id = t2.team_id
+WHERE ts1.game_id = 5;
+```
+
+---
+## Seventh Query 
+```sql
+SELECT c.first_name, c.last_name, t.team_name, c.position, c.years_experience
+FROM Coaches c
+JOIN Teams t ON c.team_id = t.team_id
+ORDER BY c.years_experience DESC;
+```
+
+---
+## Eigth Query 
+```sql
+SELECT p.first_name, p.last_name, t.team_name, p.position, p.class_year
+FROM Players p
+JOIN Teams t ON p.team_id = t.team_id
+WHERE p.class_year = 'Senior'
+ORDER BY t.team_name, p.last_name;
+```
+
+---
 
 
 
