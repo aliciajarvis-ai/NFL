@@ -18,7 +18,7 @@ Alex Carter, a journalist covering NCAA Division I Football, is preparing a comp
 
 # Data Dictionary
 
-## Coaches
+### Coaches
 | Column Name        | Data Type/Format       | Role         | Description                                  | Size |
 |--------------------|------------------------|--------------|----------------------------------------------|------|
 | coach_id           | INT                    | Primary Key  | Unique identifier for each coach             |      |
@@ -28,14 +28,14 @@ Alex Carter, a journalist covering NCAA Division I Football, is preparing a comp
 | position           | ENUM('Head Coach', 'Offensive Coordinator', 'Defensive Coordinator', 'Special Teams') | Attribute    | Coach's role (e.g., Head Coach)             |      |
 | years_experience   | INT                    | Attribute    | Years of coaching experience                 |      |
 
-## Conferences
+### Conferences
 | Column Name        | Data Type/Format       | Role         | Description                                  | Size |
 |--------------------|------------------------|--------------|----------------------------------------------|------|
 | conference_id      | INT                    | Primary Key  | Unique identifier for each conference        |      |
 | conference_name    | VARCHAR(100)           | Attribute    | Full name of the conference (e.g., SEC)      | 100  |
 | abbreviation       | VARCHAR(10)            | Attribute    | Short code for the conference (e.g., SEC)    | 10   |
 
-## Games
+### Games
 | Column Name        | Data Type/Format       | Role         | Description                                  | Size |
 |--------------------|------------------------|--------------|----------------------------------------------|------|
 | game_id            | INT                    | Primary Key  | Unique identifier for each game             |      |
@@ -44,7 +44,7 @@ Alex Carter, a journalist covering NCAA Division I Football, is preparing a comp
 | home_team_score    | INT                    | Attribute    | Score of the home team                       |      |
 | away_team_score    | INT                    | Attribute    | Score of the away team                       |      |
 
-## Injuries
+### Injuries
 | Column Name        | Data Type/Format       | Role         | Description                                  | Size |
 |--------------------|------------------------|--------------|----------------------------------------------|------|
 | injury_id          | INT                    | Primary Key  | Unique identifier for each injury           |      |
@@ -53,7 +53,7 @@ Alex Carter, a journalist covering NCAA Division I Football, is preparing a comp
 | injury_desc        | VARCHAR(255)           | Attribute    | Description of the injury                    | 255  |
 | injury_status      | ENUM('Probable', 'Questionable', 'Out', 'Season-Ending') | Attribute    | Status of the injury (e.g., Out)        |      |
 
-## Penalties
+### Penalties
 | Column Name        | Data Type/Format       | Role         | Description                                  | Size |
 |--------------------|------------------------|--------------|----------------------------------------------|------|
 | penalty_id         | INT                    | Primary Key  | Unique identifier for each penalty          |      |
@@ -63,7 +63,7 @@ Alex Carter, a journalist covering NCAA Division I Football, is preparing a comp
 | penalty_type       | VARCHAR(255)           | Attribute    | Type of penalty (e.g., Holding)              | 255  |
 | yards_lost         | INT                    | Attribute    | Yards lost due to the penalty                |      |
 
-## Player_Stats
+### Player_Stats
 | Column Name        | Data Type/Format       | Role         | Description                                  | Size |
 |--------------------|------------------------|--------------|----------------------------------------------|------|
 | stat_id            | INT                    | Primary Key  | Unique identifier for each stat entry       |      |
@@ -77,7 +77,7 @@ Alex Carter, a journalist covering NCAA Division I Football, is preparing a comp
 | sacks              | INT                    | Attribute    | Total sacks made                             |      |
 | interceptions      | INT                    | Attribute    | Total interceptions made                     |      |
 
-## Players
+### Players
 | Column Name        | Data Type/Format       | Role         | Description                                  | Size |
 |--------------------|------------------------|--------------|----------------------------------------------|------|
 | player_id          | INT                    | Primary Key  | Unique identifier for each player           |      |
@@ -88,7 +88,7 @@ Alex Carter, a journalist covering NCAA Division I Football, is preparing a comp
 | jersey_number      | INT                    | Attribute    | Player's jersey number                       |      |
 | class_year         | ENUM('Freshman', 'Sophomore', 'Junior', 'Senior', 'Graduate') | Attribute    | Player's academic year (e.g., Junior)       |      |
 
-## Recruiting
+### Recruiting
 | Column Name        | Data Type/Format       | Role         | Description                                  | Size |
 |--------------------|------------------------|--------------|----------------------------------------------|------|
 | recruit_id         | INT                    | Primary Key  | Unique identifier for each recruit          |      |
@@ -98,7 +98,7 @@ Alex Carter, a journalist covering NCAA Division I Football, is preparing a comp
 | position           | ENUM('QB', 'RB', 'WR', 'TE', 'OL', 'DL', 'LB', 'DB', 'K', 'P') | Attribute    | Recruit's position (e.g., QB)               |      |
 | star_rating        | INT                    | Attribute    | Recruit's star rating (1-5)                  |      |
 
-## Team_Stats
+### Team_Stats
 | Column Name        | Data Type/Format       | Role         | Description                                  | Size |
 |--------------------|------------------------|--------------|----------------------------------------------|------|
 | stat_id            | INT                    | Primary Key  | Unique identifier for each stat entry       |      |
@@ -111,7 +111,7 @@ Alex Carter, a journalist covering NCAA Division I Football, is preparing a comp
 | penalties          | INT                    | Attribute    | Total number of penalties                    |      |
 | penalty_yards      | INT                    | Attribute    | Total penalty yards                          |      |
 
-## Teams
+### Teams
 | Column Name        | Data Type/Format       | Role         | Description                                  | Size |
 |--------------------|------------------------|--------------|----------------------------------------------|------|
 | team_id            | INT                    | Primary Key  | Unique identifier for each team             |      |
@@ -119,14 +119,14 @@ Alex Carter, a journalist covering NCAA Division I Football, is preparing a comp
 | abbreviation       | VARCHAR(10)            | Attribute    | Short code for the team (e.g., ALA)          | 10   |
 | conference_id      | INT                    | Foreign Key  | Links to Conferences(conference_id)          |      |
 
-## Teams_has_Games
+### Teams_has_Games
 | Column Name        | Data Type/Format       | Role         | Description                                  | Size |
 |--------------------|------------------------|--------------|----------------------------------------------|------|
 | team_id            | INT                    | Primary Key, Foreign Key | Links to Teams(team_id)                |      |
 | game_id            | INT                    | Primary Key, Foreign Key | Links to Games(game_id)                |      |
 | role               | ENUM('Home', 'Away', 'Winner') | Attribute    | Role of the team in the game             |      |
 
-## Venues
+### Venues
 | Column Name        | Data Type/Format       | Role         | Description                                  | Size |
 |--------------------|------------------------|--------------|----------------------------------------------|------|
 | venue_id           | INT                    | Primary Key  | Unique identifier for each venue            |      |
