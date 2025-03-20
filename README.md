@@ -25,5 +25,5 @@ Alex Carter, a journalist covering NCAA Division I Football, is preparing a comp
 10. **Teams_has_Games**: Establishes the relationship between teams and games, linking each team to the specific games they have played.
 
 # Data Model
-<img width="500" alt="image" src= "https://github.com/user-attachments/assets/cb287cc5-0321-4dd1-9bd8-74bcd3a3dc7c" />
+<img width="700" alt="image" src= "https://github.com/user-attachments/assets/cb287cc5-0321-4dd1-9bd8-74bcd3a3dc7c" />
 
