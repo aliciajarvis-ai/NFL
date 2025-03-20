@@ -41,15 +41,21 @@ Alex Carter, a journalist covering NCAA Division I Football, is preparing a comp
 ![image](https://github.com/user-attachments/assets/4638a7a5-fd9a-4076-bdcd-7517f2d070f5)
 
 # Queries 
-1.
-SELECT p.first_name, p.last_name, t.team_name, ps.game_id, g.game_date, ps.passing_yards
-FROM Player_Stats ps
-JOIN Players p ON ps.player_id = p.player_id
-JOIN Teams t ON p.team_id = t.team_id
-JOIN Games g ON ps.game_id = g.game_id
-WHERE ps.passing_yards > 0
-ORDER BY ps.passing_yards DESC
-LIMIT 5;
+1. ![image](https://github.com/user-attachments/assets/9fd2b822-f7e3-4c0e-8a6a-5a46c83ff24d)
+2. ![image](https://github.com/user-attachments/assets/3a0598b8-434b-4bc0-adb1-3afd70c01348)
+3. ![image](https://github.com/user-attachments/assets/78bdd21d-35af-4870-9c87-4dbfe3f1fdc9)
+4. ![image](https://github.com/user-attachments/assets/fc4067b0-65c5-4e6b-a4ca-470738d8bb5a)
+5. ![image](https://github.com/user-attachments/assets/00af0551-83d1-480a-846a-ec188f512f48)
+6.
+7. ![image](https://github.com/user-attachments/assets/7a4f8c29-35ec-42ef-856f-110e5b67ad23)
+8. ![image](https://github.com/user-attachments/assets/cf1be7ec-ff0a-49c0-a534-63886ee539cf)
+
+
+
+
+
+
+
 
 
 
