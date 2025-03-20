@@ -40,6 +40,16 @@ Alex Carter, a journalist covering NCAA Division I Football, is preparing a comp
 
 ![image](https://github.com/user-attachments/assets/4638a7a5-fd9a-4076-bdcd-7517f2d070f5)
 
+# Queries 
+1.
+SELECT p.first_name, p.last_name, t.team_name, ps.game_id, g.game_date, ps.passing_yards
+FROM Player_Stats ps
+JOIN Players p ON ps.player_id = p.player_id
+JOIN Teams t ON p.team_id = t.team_id
+JOIN Games g ON ps.game_id = g.game_id
+WHERE ps.passing_yards > 0
+ORDER BY ps.passing_yards DESC
+LIMIT 5;
 
 
 
