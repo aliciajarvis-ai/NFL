@@ -52,6 +52,13 @@ WHERE ps.passing_yards > 0
 ORDER BY ps.passing_yards DESC
 LIMIT 5;
 ```
+### Results
+| first_name | last_name | team_name         | game_id | game_date  | passing_yards |
+|------------|----------|------------------|---------|------------|--------------|
+| Carson     | Beck     | Georgia Bulldogs | 1       | 2024-10-19 | 250          |
+| Quinn      | Ewers    | Texas Longhorns  | 5       | 2024-12-07 | 200          |
+| Quinn      | Ewers    | Texas Longhorns  | 1       | 2024-10-19 | 180          |
+| Gunner     | Stockton | Georgia Bulldogs | 5       | 2024-12-07 | 71           |
 
 ---
 ## Second Query 
