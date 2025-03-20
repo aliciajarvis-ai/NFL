@@ -103,6 +103,14 @@ WHERE r.star_rating = (
 )
 ORDER BY r.star_rating DESC, t.team_name;
 ```
+### Results 
+| team_name         | first_name | last_name       | position | rating |
+|------------------|------------|----------------|----------|--------|
+| Georgia Bulldogs | Ellis      | Robinson IV    | DB       | 5      |
+| Georgia Bulldogs | KJ         | Bolden         | DB       | 5      |
+| Auburn Tigers    | Cam        | Coleman        | WR       | 4      |
+| Texas Longhorns  | DJ         | Campbell       | OL       | 4      |
+| Ole Miss Rebels  | Jadon      | Canady         | DB       | 3      |
 
 ---
 ## Fifth Query 
