@@ -30,6 +30,8 @@ Alex Carter, a journalist covering NCAA Division I Football, is preparing a comp
 <img width="700" alt="image" src= "https://github.com/user-attachments/assets/cb287cc5-0321-4dd1-9bd8-74bcd3a3dc7c" />
 
 # Data Dictionary
+![image](https://github.com/user-attachments/assets/352f02fe-e7c2-4d78-b780-52eeb5ef6360)
+
 <img width="550" alt="image" src= "https://github.com/user-attachments/assets/5d046869-8bbb-4cf6-bfc8-e639de17db84" />
 <img width="550" alt="image" src= "https://github.com/user-attachments/assets/17316382-4934-4f86-aaa3-1f83047028d6" />
 <img width="550" alt="image" src= "https://github.com/user-attachments/assets/24b069e8-42c2-47bb-83d5-cc319bf657fc" /> 
