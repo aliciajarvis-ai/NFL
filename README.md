@@ -145,7 +145,11 @@ This data model effectively represents the structure of the 2024-2025 SEC footba
 
 # Queries 
 ## First Query
-The query asks for the top 5 passing performances within the quarterbacks of the SEC. This will help determine who the best and standouts quarterbacks are for her article so she can highlight them. 
+#### Description
+This query retrieves the top five passing performances in the SEC, highlighting quarterbacks with the highest passing yards. This will help Alex determine the standout quarterbacks of the season for her article.
+
+#### Justification
+Highlighting the top quarterbacks provides insight into the players who have performed exceptionally well. These statistics can also support discussions about potential NFL draft prospects.
 
 ```sql
 SELECT p.first_name, p.last_name, t.team_name, ps.game_id, g.game_date, ps.passing_yards
@@ -167,7 +171,11 @@ LIMIT 5;
 
 ---
 ## Second Query
-This query shows the teams with the most penalties throughout the season. This will allow her to highlight which teams are “undisciplined” and perhaps young teams with little veteran leadership.  
+#### Description
+This query determines which teams accumulated the most penalty yards over the season. Alex can use this to analyze whether undisciplined teams struggled due to penalties.
+
+#### Justification
+This data helps in identifying patterns in team discipline, which could be crucial in understanding why certain teams underperformed or lost key games.
 
 ```sql
 SELECT t.team_name, SUM(ts.penalty_yards) AS total_penalty_yards, SUM(ts.penalties) AS total_penalties
@@ -185,8 +193,10 @@ ORDER BY total_penalty_yards DESC;
 
 ---
 ## Third Query 
-This query shows the players who were injured during the SEC Championship game. This is vital as this can impact, not only the game but the draft stock of players that are likely to declare for the NFL draft. All of which are important information for Alex to report on. 
-
+#### Description
+This query lists players who sustained injuries during the SEC Championship game. Such injuries can impact a team’s performance and the players' NFL draft prospects.
+#### Justification
+Injury reports are critical for understanding a team’s season-ending performance and predicting future player impacts at the collegiate and professional levels.
 ```sql
 SELECT p.first_name, p.last_name, t.team_name, i.injury_desc, i.injury_status
 FROM Injuries i
@@ -201,7 +211,10 @@ WHERE i.game_id = 5;
 
 ---
 ## Fourth Query 
-This query shows the top recruits based off of a star rating system. This is a list of the future talent that will go to the SEC schools. This is important for Alex as the dawgs have some major 5 star talent coming for the next season. 
+#### Description
+This query identifies the highest-rated recruits committing to SEC teams, showcasing future talent.
+#### Justification
+Understanding top recruits helps predict a team’s future performance and their chances of competing at a high level in upcoming seasons.
 
 ```sql
 SELECT t.team_name, r.first_name, r.last_name, r.position, r.star_rating
@@ -225,7 +238,11 @@ ORDER BY r.star_rating DESC, t.team_name;
 
 ---
 ## Fifth Query 
-This query finds the player with the most tackles in the SEC Championship game to highlight the defensive star of the game. Alex will use this information to write a future piece about the top defensive players in the SEC over the last 10 years. 
+#### Description
+This query identifies the player with the highest number of tackles in the SEC Championship game, highlighting the defensive star of the game.
+
+#### Justification
+Defensive performances are often overlooked, and this query provides insight into standout defensive efforts that influenced the game outcome.
 
 ```sql
 SELECT p.first_name, p.last_name, t.team_name, ps.tackles
@@ -243,7 +260,10 @@ LIMIT 1;
 
 ---
 ## Sixth Query 
-This query gets the overall team performance in the Championship game. This includes stuff like team passing and rushing yards, and also highlights team defensive performance.This is especially useful as Alex will be able to see which teams have been playing well overall in the game. These stats are insightful and will show which teams are performing. 
+#### Description
+This query compares overall team performance in the SEC Championship game, highlighting offensive and defensive statistics.
+#### Justification
+Analyzing team statistics helps determine which teams executed their game plans effectively and how they matched up against their opponents.
 
 ```sql
 SELECT t1.team_name AS team, thg1.role, ts1.total_yards AS team_yards, ts1.passing_yards AS team_passing, 
@@ -265,7 +285,10 @@ WHERE ts1.game_id = 5;
 
 ---
 ## Seventh Query 
-This query lists coaches in order of experience in order to better discuss coaching impact. This is huge as coaches like Nick Saban retired last season and typically the longer tenured a coach is, the better and more impactful they are. This will allow Alex to show which coaches have molded the teams to how they see fit with their impact. 
+#### Description
+This query ranks SEC coaches by their experience, helping Alex discuss the impact of tenure on team performance.
+#### Justification
+Experienced coaches often bring stability and success to programs. This analysis helps identify teams benefiting from long-tenured leadership.
 
 ```sql
 SELECT c.first_name, c.last_name, t.team_name, c.position, c.years_experience
@@ -298,7 +321,11 @@ ORDER BY c.years_experience DESC;
 
 ---
 ## Eigth Query 
-This query finds senior players who might be draft-eligible to predict NFL prospects. This is particularly useful for Alex as she will be able to write about the future draft prospects and will allow her to make her own mock draft for the NFL. 
+#### Description
+This query finds senior players, making them eligible for the upcoming NFL draft.
+
+#### Justification
+This information is crucial for predicting which SEC players will be entering the draft and how their teams will replace them.
 
 ```sql
 SELECT p.first_name, p.last_name, t.team_name, p.position, p.class_year
@@ -316,7 +343,10 @@ ORDER BY t.team_name, p.last_name;
 
 ---
 ## Ninth Query 
-This query lists all games with the winner and scores to summarize the season. This will allow Alex to analyze the trends of teams throughout the season and see the final rankings of the teams. 
+#### Description
+This query lists all SEC games, including the winning teams and final scores.
+#### Justification
+Summarizing game results provides an overview of the season and helps identify trends in team performance. 
 
 ```sql
 SELECT g.game_id, g.game_date, v.venue_name,
@@ -343,7 +373,10 @@ JOIN Teams thg_winner_team ON thg_winner.team_id = thg_winner_team.team_id;
 
 ---
 ## Tenth Query 
-This query finds games where penalties significantly impacted the outcome (high penalty yards for the losing team). This allows Alex to see the teams that are heavily penalized and see if there is a noticeable trend for teams that get penalized consistently. 
+#### Description
+This query finds games where penalties significantly impacted the losing team’s performance.
+#### Justification
+This data helps determine whether excessive penalties contributed to a team’s losses, indicating discipline issues.
 
 ```sql
 SELECT g.game_id, g.game_date, v.venue_name,
