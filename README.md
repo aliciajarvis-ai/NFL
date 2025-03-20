@@ -42,6 +42,8 @@ Alex Carter, a journalist covering NCAA Division I Football, is preparing a comp
 
 # Queries 
 ## First Query
+The query asks for the top 5 passing performances within the quarterbacks of the SEC. This will help determine who the best and standouts quarterbacks are for her article so she can highlight them. 
+
 ```sql
 SELECT p.first_name, p.last_name, t.team_name, ps.game_id, g.game_date, ps.passing_yards
 FROM Player_Stats ps
@@ -61,7 +63,9 @@ LIMIT 5;
 | Gunner     | Stockton | Georgia Bulldogs | 5       | 2024-12-07 | 71           |
 
 ---
-## Second Query 
+## Second Query
+This query shows the teams with the most penalties throughout the season. This will allow her to highlight which teams are “undisciplined” and perhaps young teams with little veteran leadership.  
+
 ```sql
 SELECT t.team_name, SUM(ts.penalty_yards) AS total_penalty_yards, SUM(ts.penalties) AS total_penalties
 FROM Team_Stats ts
@@ -78,6 +82,8 @@ ORDER BY total_penalty_yards DESC;
 
 ---
 ## Third Query 
+This query shows the players who were injured during the SEC Championship game. This is vital as this can impact, not only the game but the draft stock of players that are likely to declare for the NFL draft. All of which are important information for Alex to report on. 
+
 ```sql
 SELECT p.first_name, p.last_name, t.team_name, i.injury_desc, i.injury_status
 FROM Injuries i
@@ -92,6 +98,8 @@ WHERE i.game_id = 5;
 
 ---
 ## Fourth Query 
+This query shows the top recruits based off of a star rating system. This is a list of the future talent that will go to the SEC schools. This is important for Alex as the dawgs have some major 5 star talent coming for the next season. 
+
 ```sql
 SELECT t.team_name, r.first_name, r.last_name, r.position, r.star_rating
 FROM Recruiting r
@@ -114,6 +122,8 @@ ORDER BY r.star_rating DESC, t.team_name;
 
 ---
 ## Fifth Query 
+This query finds the player with the most tackles in the SEC Championship game to highlight the defensive star of the game. Alex will use this information to write a future piece about the top defensive players in the SEC over the last 10 years. 
+
 ```sql
 SELECT p.first_name, p.last_name, t.team_name, ps.tackles
 FROM Player_Stats ps
@@ -130,6 +140,8 @@ LIMIT 1;
 
 ---
 ## Sixth Query 
+This query gets the overall team performance in the Championship game. This includes stuff like team passing and rushing yards, and also highlights team defensive performance.This is especially useful as Alex will be able to see which teams have been playing well overall in the game. These stats are insightful and will show which teams are performing. 
+
 ```sql
 SELECT t1.team_name AS team, thg1.role, ts1.total_yards AS team_yards, ts1.passing_yards AS team_passing, 
 	ts1.rushing_yards AS team_rushing, t2.team_name AS opponent, ts2.total_yards AS opponent_yards, 
@@ -150,6 +162,8 @@ WHERE ts1.game_id = 5;
 
 ---
 ## Seventh Query 
+This query lists coaches in order of experience in order to better discuss coaching impact. This is huge as coaches like Nick Saban retired last season and typically the longer tenured a coach is, the better and more impactful they are. This will allow Alex to show which coaches have molded the teams to how they see fit with their impact. 
+
 ```sql
 SELECT c.first_name, c.last_name, t.team_name, c.position, c.years_experience
 FROM Coaches c
@@ -181,6 +195,8 @@ ORDER BY c.years_experience DESC;
 
 ---
 ## Eigth Query 
+This query finds senior players who might be draft-eligible to predict NFL prospects. This is particularly useful for Alex as she will be able to write about the future draft prospects and will allow her to make her own mock draft for the NFL. 
+
 ```sql
 SELECT p.first_name, p.last_name, t.team_name, p.position, p.class_year
 FROM Players p
@@ -197,6 +213,8 @@ ORDER BY t.team_name, p.last_name;
 
 ---
 ## Ninth Query 
+This query lists all games with the winner and scores to summarize the season. This will allow Alex to analyze the trends of teams throughout the season and see the final rankings of the teams. 
+
 ```sql
 SELECT g.game_id, g.game_date, v.venue_name,
        thg1_team.team_name AS home_team, g.home_team_score,
@@ -222,6 +240,8 @@ JOIN Teams thg_winner_team ON thg_winner.team_id = thg_winner_team.team_id;
 
 ---
 ## Tenth Query 
+This query finds games where penalties significantly impacted the outcome (high penalty yards for the losing team). This allows Alex to see the teams that are heavily penalized and see if there is a noticeable trend for teams that get penalized consistently. 
+
 ```sql
 SELECT g.game_id, g.game_date, v.venue_name,
        thg_loser_team.team_name AS losing_team, ts.penalty_yards,
