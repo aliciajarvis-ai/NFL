@@ -12,21 +12,8 @@ G2
 # Project Scenario
 Alex Carter, a journalist covering NCAA Division I Football, is preparing a comprehensive wrap-up of the 2024 SEC season. With the season concluded, she wants to analyze the NFL draft picks from SEC teams, standout player performances, team trends, coaching changes, and other key developments within the conference. To ensure her article provides a unique and insightful perspective, she reaches out to a coworker for detailed SEC-specific data, including draft selections, player stats, team performance metrics, the SEC championship game and notable off-season moves. By leveraging this information, Alex aims to craft an in-depth analysis that sets her apart in the competitive world of sports journalism.
 
-# Key Entities
-1. **Games**: Stores details about each game, including the game ID, date, and scores for both teams. This entity helps track when and where games were played and their final results.  
-2. **Teams**: Contains information about each football team, including the team name and conference. This is useful for understanding team backgrounds and historical performance.  
-3. **Players**: Maintains records of individual players, including their names, team affiliation, position, height, weight, and jersey number.  
-4. **Team_Stats**: Holds team-level performance metrics, such as passing yards, rushing yards, and penalties for each game.  
-5. **Player_Stats**: Tracks individual player statistics per game, including passing yards, rushing yards, receiving yards, touchdowns, tackles, and interceptions.  
-6. **Penalties**: Records penalty details such as type, yards lost, and the player and team responsible.  
-7. **Injuries**: Documents player injuries, including descriptions and status updates.  
-8. **Recruiting**: Lists new recruits, including their first name, last name, committed team, and star rating.  
-9. **Coaches**: Stores details about team coaches, including first name, last name, position, and years of experience.  
-10. **Conferences**: Contains details about different football conferences, such as conference name and abbreviation.  
-11. **Teams_has_Games**: Establishes the relationship between teams and games, linking each team to the specific games they have played.  
-12. **Venues**: Captures information about where games are played, including venue name and state.
-
 # Data Model
+
 <img width="700" alt="image" src= "https://github.com/user-attachments/assets/cb287cc5-0321-4dd1-9bd8-74bcd3a3dc7c" />
 
 # Data Dictionary
@@ -369,6 +356,21 @@ ORDER BY ts.penalty_yards DESC;
 
 
 ---
+
+# Complexity 
+
+| Feature                          | Q1       | Q2       | Q3       | Q4        | Q5       | Q6        | Q7       | Q8       | Q9        | Q10       |
+|----------------------------------|---------|---------|---------|----------|---------|----------|---------|---------|----------|----------|
+| Joins Multiple Tables           | 4 tables | 2 tables | 3 tables | 2 tables | 3 tables | 6 tables | 2 tables | 2 tables | 7 tables | 6 tables |
+| Aggregation (e.g., SUM, COUNT)  | -       | SUM     | -       | -        | -       | -        | -       | -       | -        | -        |
+| Conditional Logic (e.g., WHERE) | WHERE   | -       | WHERE   | WHERE    | WHERE   | WHERE    | -       | WHERE   | WHERE    | WHERE    |
+| Grouping (e.g., GROUP BY)       | -       | GROUP BY | -       | -        | -       | -        | -       | -       | -        | -        |
+| Sorting (e.g., ORDER BY)        | ORDER BY | ORDER BY | -       | ORDER BY | ORDER BY | -        | ORDER BY | ORDER BY | -        | ORDER BY |
+| Limiting Results (e.g., LIMIT)  | LIMIT   | -       | -       | -        | LIMIT   | -        | LIMIT   | -       | -        | -        |
+| Subqueries                      | -       | -       | -       | Correlated | -       | -        | -       | -       | -        | -        |
+| Multiple Joins to Same Table    | -       | -       | -       | -        | -       | Yes (2x) | -       | -       | Yes (3x) | Yes (2x) |
+| Query Complexity            | Simple  | Simple  | Simple  | Complex   | Simple  | Complex  | Simple  | Simple  | Complex  | Complex  |
+
 
 
 
