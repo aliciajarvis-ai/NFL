@@ -188,9 +188,39 @@ JOIN Teams t ON p.team_id = t.team_id
 WHERE p.class_year = 'Senior'
 ORDER BY t.team_name, p.last_name;
 ```
+### Results 
+| first_name | last_name | team_name                        | position | class_year  |
+|------------|----------|---------------------------------|----------|--------|
+| Carson     | Beck     | Georgia Bulldogs               | QB       | Senior |
+| Raheim     | Sanders  | South Carolina Gamecocks      | RB       | Senior |
+| Diego      | Pavia    | Vanderbilt Commodores         | QB       | Senior |
 
 ---
+## Ninth Query 
+```sql
+SELECT g.game_id, g.game_date, v.venue_name,
+       thg1_team.team_name AS home_team, g.home_team_score,
+       thg2_team.team_name AS away_team, g.away_team_score,
+       thg_winner_team.team_name AS winner
+FROM Games g
+JOIN Venues v ON g.venue_id = v.venue_id
+JOIN Teams_has_Games thg1 ON g.game_id = thg1.game_id AND thg1.role IN ('Home', 'Winner')
+JOIN Teams_has_Games thg2 ON g.game_id = thg2.game_id AND thg2.role = 'Away'
+JOIN Teams_has_Games thg_winner ON g.game_id = thg_winner.game_id AND thg_winner.role = 'Winner'
+JOIN Teams thg1_team ON thg1.team_id = thg1_team.team_id
+JOIN Teams thg2_team ON thg2.team_id = thg2_team.team_id
+JOIN Teams thg_winner_team ON thg_winner.team_id = thg_winner_team.team_id;
+```
+### Results 
+| game_id | game_date  | venue_name         | home_team           | home_team_score | away_team           | away_team_score | winner             |
+|---------|-----------|--------------------------------------------|---------------------|------------|---------------------|------------|---------------------|
+| 4       | 2024-11-16 | Bryant-Denny Stadium                     | Alabama Crimson Tide | 27         | LSU Tigers          | 17         | Alabama Crimson Tide |
+| 1       | 2024-10-19 | Sanford Stadium                          | Georgia Bulldogs    | 30         | Texas Longhorns     | 15         | Georgia Bulldogs    |
+| 2       | 2024-11-02 | Sanford Stadium                          | Georgia Bulldogs    | 34         | Florida Gators      | 20         | Georgia Bulldogs    |
+| 5       | 2024-12-07 | Mercedes-Benz Stadium                    | Georgia Bulldogs    | 22         | Texas Longhorns     | 19         | Georgia Bulldogs    |
+| 3       | 2024-11-09 | Darrell K Royal-Texas Memorial Stadium  | Texas Longhorns     | 28         | Arkansas Razorbacks | 24         | Texas Longhorns     |
 
+---
 
 
 
