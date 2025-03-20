@@ -27,3 +27,7 @@ Alex Carter, a journalist covering NCAA Division I Football, is preparing a comp
 # Data Model
 <img width="700" alt="image" src= "https://github.com/user-attachments/assets/cb287cc5-0321-4dd1-9bd8-74bcd3a3dc7c" />
 
+# Data Dictionary
+<img width="300" alt="image" src= "https://github.com/user-attachments/assets/5d046869-8bbb-4cf6-bfc8-e639de17db84" />
+
+
