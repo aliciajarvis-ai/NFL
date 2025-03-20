@@ -35,7 +35,7 @@ Here’s the completed version of your **Key Entities** description to align wit
 <img width="700" alt="image" src= "https://github.com/user-attachments/assets/cb287cc5-0321-4dd1-9bd8-74bcd3a3dc7c" />
 
 # Data Dictionary
-<img width="500" alt="image" src= "https://github.com/user-attachments/assets/5d046869-8bbb-4cf6-bfc8-e639de17db84" />
+<img width="550" alt="image" src= "https://github.com/user-attachments/assets/5d046869-8bbb-4cf6-bfc8-e639de17db84" />
 
 <img width="500" alt="image" src= "https://github.com/user-attachments/assets/17316382-4934-4f86-aaa3-1f83047028d6" />
 
