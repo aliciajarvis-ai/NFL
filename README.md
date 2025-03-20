@@ -13,23 +13,18 @@ G2
 Alex Carter, a journalist covering NCAA Division I Football, is preparing a comprehensive wrap-up of the 2024 SEC season. With the season concluded, she wants to analyze the NFL draft picks from SEC teams, standout player performances, team trends, coaching changes, and other key developments within the conference. To ensure her article provides a unique and insightful perspective, she reaches out to a coworker for detailed SEC-specific data, including draft selections, player stats, team performance metrics, and notable off-season moves. By leveraging this information, Alex aims to craft an in-depth analysis that sets her apart in the competitive world of sports journalism.
 
 # Key Entities
-Here’s the completed version of your **Key Entities** description to align with the given database schema model:  
-
----
-
-### **Key Entities**  
-1. **Games**: Stores details about each game, including the game ID, date, location, and scores for both teams. This entity helps track when and where games were played and their final results.  
-2. **Teams**: Contains information about each football team, including team name, conference, home stadium, and founding year. This is useful for understanding team backgrounds and historical performance.  
-3. **Players**: Maintains records of individual players, including their names, team affiliation, position, height, weight, and status. This helps analyze key players in the championship game.  
-4. **Team_Stats**: Holds team-level performance metrics, such as total yards, penalties, and penalty yards for each game. This allows for comparing team performances throughout the season.  
-5. **Player_Stats**: Tracks individual player statistics per game, including passing, rushing, and receiving yards, as well as touchdowns, tackles, and interceptions. This helps highlight standout players and their contributions.  
-6. **Penalties**: Records penalty details such as type, yards lost, and the player and team responsible. This helps analyze discipline trends and how penalties impact game outcomes.  
-7. **Injuries**: Documents player injuries with descriptions and status updates. Knowing which key players are injured can be crucial for pre-game analysis.  
-8. **Recruiting**: Lists new recruits, including their high school, hometown, and committed team. This can provide insights into upcoming talent for teams.  
-9. **Coaches**: Stores details about team coaches, including names, roles, and experience levels. Coaching strategies can play a big role in game outcomes.  
-10. **Conferences**: Contains details about different football conferences, such as conference names and abbreviations. Conferences help categorize teams into leagues or divisions.  
-11. **Teams_has_Games**: Establishes the relationship between teams and games, linking each team to the specific games they have played. This ensures that teams can be associated with multiple games, and vice versa.  
-12. **Venues**: Captures information about the locations where games are played, including venue name, city, and state. This provides context for home-field advantage and travel conditions.  
+1. **Games**: Stores details about each game, including the game ID, date, and scores for both teams. This entity helps track when and where games were played and their final results.  
+2. **Teams**: Contains information about each football team, including the team name and conference. This is useful for understanding team backgrounds and historical performance.  
+3. **Players**: Maintains records of individual players, including their names, team affiliation, position, height, weight, and jersey number.  
+4. **Team_Stats**: Holds team-level performance metrics, such as passing yards, rushing yards, and penalties for each game.  
+5. **Player_Stats**: Tracks individual player statistics per game, including passing yards, rushing yards, receiving yards, touchdowns, tackles, and interceptions.  
+6. **Penalties**: Records penalty details such as type, yards lost, and the player and team responsible.  
+7. **Injuries**: Documents player injuries, including descriptions and status updates.  
+8. **Recruiting**: Lists new recruits, including their first name, last name, committed team, and star rating.  
+9. **Coaches**: Stores details about team coaches, including first name, last name, position, and years of experience.  
+10. **Conferences**: Contains details about different football conferences, such as conference name and abbreviation.  
+11. **Teams_has_Games**: Establishes the relationship between teams and games, linking each team to the specific games they have played.  
+12. **Venues**: Captures information about where games are played, including venue name and state.
 
 # Data Model
 <img width="700" alt="image" src= "https://github.com/user-attachments/assets/cb287cc5-0321-4dd1-9bd8-74bcd3a3dc7c" />
