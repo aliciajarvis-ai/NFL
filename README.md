@@ -237,9 +237,10 @@ WHERE ts.penalty_yards > 30
 ORDER BY ts.penalty_yards DESC;
 ```
 ### Results 
-| game_id | game_date  | venue_name           | losing_team        |  penalty_yards         | winning_team          |
-|---------|------------|------------------------|------------------|----------------|------------|------------------|
-| 5       | 2024-12-07 | Mercedes-Benz Stadium   | Texas Longhorns  | 45         | Texas Longhorns  |
+| game_id | game_date  | venue_name           | losing_team        | penalty_yards | winning_team          |
+|---------|------------|----------------------|--------------------|---------------|-----------------------|
+| 5       | 2024-12-07 | Mercedes-Benz Stadium | Texas Longhorns    | 45            | Georgia Bulldogs      |
+
 
 ---
 
